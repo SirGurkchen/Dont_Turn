@@ -41,7 +41,7 @@ Light:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1234120443512937787}
   m_Enabled: 1
-  serializedVersion: 12
+  serializedVersion: 13
   m_Type: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Intensity: 12
@@ -93,7 +93,7 @@ Light:
   m_UseBoundingSphereOverride: 0
   m_UseViewFrustumForShadowCasterCull: 1
   m_ForceVisible: 0
-  m_ShadowRadius: 0
+  m_ShapeRadius: 0
   m_ShadowAngle: 0
   m_LightUnit: 1
   m_LuxAtDistance: 1
@@ -168,7 +168,7 @@ Light:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4394809319728980869}
   m_Enabled: 1
-  serializedVersion: 12
+  serializedVersion: 13
   m_Type: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Intensity: 12
@@ -220,7 +220,7 @@ Light:
   m_UseBoundingSphereOverride: 0
   m_UseViewFrustumForShadowCasterCull: 1
   m_ForceVisible: 0
-  m_ShadowRadius: 0
+  m_ShapeRadius: 0
   m_ShadowAngle: 0
   m_LightUnit: 1
   m_LuxAtDistance: 1
@@ -295,7 +295,7 @@ Light:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5118990701401163942}
   m_Enabled: 1
-  serializedVersion: 12
+  serializedVersion: 13
   m_Type: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Intensity: 12
@@ -347,7 +347,7 @@ Light:
   m_UseBoundingSphereOverride: 0
   m_UseViewFrustumForShadowCasterCull: 1
   m_ForceVisible: 0
-  m_ShadowRadius: 0
+  m_ShapeRadius: 0
   m_ShadowAngle: 0
   m_LightUnit: 1
   m_LuxAtDistance: 1
@@ -423,6 +423,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 373824497312848247, guid: 4b45484d89540ed47b0db95c15130c99, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 7c56e1ab9cc664541afc53c29e758f79, type: 2}
+    - target: {fileID: 3572192428499973013, guid: 4b45484d89540ed47b0db95c15130c99, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 7c56e1ab9cc664541afc53c29e758f79, type: 2}
     - target: {fileID: 3711724002371072326, guid: 4b45484d89540ed47b0db95c15130c99, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -463,10 +471,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3744103740073218427, guid: 4b45484d89540ed47b0db95c15130c99, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 7c56e1ab9cc664541afc53c29e758f79, type: 2}
     - target: {fileID: 4146055278066065325, guid: 4b45484d89540ed47b0db95c15130c99, type: 3}
       propertyPath: m_Name
       value: RoomOne Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 7241306073362313409, guid: 4b45484d89540ed47b0db95c15130c99, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 7c56e1ab9cc664541afc53c29e758f79, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
