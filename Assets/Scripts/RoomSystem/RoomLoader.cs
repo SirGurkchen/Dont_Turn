@@ -10,6 +10,8 @@ public class RoomLoader : MonoBehaviour
 
     public event Action OnDoorWasUsed;
 
+    public GameObject CurrentRoom => _currentRoom;
+
     public void LoadNewRoom(int roomNumber)
     {
         if (_currentDoor != null)
