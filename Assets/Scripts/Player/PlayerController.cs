@@ -34,6 +34,11 @@ public class PlayerController : MonoBehaviour
         _interaction.StartThinking(thought);
     }
 
+    public void ShowDialogue(string dialogue)
+    {
+        _interaction.SetDialogueThought(dialogue);
+    }
+
     private void MovePlayer()
     {
         Vector2 moveDir = GameInput.Instance.PlayerMovementNormalized();

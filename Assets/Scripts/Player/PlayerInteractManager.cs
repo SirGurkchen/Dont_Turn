@@ -1,5 +1,6 @@
 using System.Collections;
 using TMPro;
+using Unity.Mathematics;
 using UnityEngine;
 
 public class PlayerInteractManager : MonoBehaviour
@@ -19,6 +20,7 @@ public class PlayerInteractManager : MonoBehaviour
     {
         if (interactable != null)
         {
+            interactable.HideInteractPrompt();
             interactable.Interact(player);
         }
     }
@@ -35,6 +37,11 @@ public class PlayerInteractManager : MonoBehaviour
             StopCoroutine(_thoughtRoutine);
         }
         _thoughtRoutine = StartCoroutine(Think(text));
+    }
+
+    public void SetDialogueThought(string text)
+    {
+        _playerThoughtText.text = text;
     }
 
     private IEnumerator Think(string text)

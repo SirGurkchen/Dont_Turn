@@ -8,6 +8,7 @@ public class GameInput : MonoBehaviour
     private InputActions _inputActions;
 
     public event Action OnInteract;
+    public event Action OnDialogueProgress;
 
     private void Awake()
     {
@@ -25,12 +26,19 @@ public class GameInput : MonoBehaviour
     private void Start()
     {
         _inputActions.Player.Enable();
+        _inputActions.Player.Dialogue.Disable();
         _inputActions.Player.Interact.performed += InteractPerformed;
+        _inputActions.Player.Dialogue.performed += DialoguePerformed;
     }
 
     private void InteractPerformed(UnityEngine.InputSystem.InputAction.CallbackContext obj)
     {
         OnInteract?.Invoke();
+    }
+
+    private void DialoguePerformed(UnityEngine.InputSystem.InputAction.CallbackContext obj)
+    {
+        OnDialogueProgress?.Invoke();
     }
 
     public Vector2 PlayerMovementNormalized()
@@ -50,6 +58,24 @@ public class GameInput : MonoBehaviour
         {
             _inputActions.Player.Move.Enable();
             _inputActions.Player.Look.Enable();
+        }
+    }
+
+    public void TogglePlayerDialogue()
+    {
+        if (_inputActions.Player.Move.enabled)
+        {
+            _inputActions.Player.Move.Disable();
+            _inputActions.Player.Look.Disable();
+            _inputActions.Player.Interact.Disable();
+            _inputActions.Player.Dialogue.Enable();
+        }
+        else
+        {
+            _inputActions.Player.Move.Enable();
+            _inputActions.Player.Look.Enable();
+            _inputActions.Player.Enable();
+            _inputActions.Player.Dialogue.Disable();
         }
     }
 

@@ -3,11 +3,13 @@ using System;
 
 public class DialogueInteractable : InteractableController
 {
-    public static event Action OnDialogueInteract;
+    [SerializeField] private DialogueBase _dialogueData;
+
+    public event Action<string, string[], PlayerController> OnDialogueInteract;
 
     public override void Interact(PlayerController player)
     {
-        OnDialogueInteract?.Invoke();
+        OnDialogueInteract?.Invoke(_dialogueData.SpeakerName, _dialogueData.SpokenText, player);
     }
 
     private void OnDestroy()
