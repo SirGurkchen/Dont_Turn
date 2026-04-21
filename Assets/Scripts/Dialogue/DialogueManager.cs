@@ -4,11 +4,15 @@ using UnityEngine;
 
 public class DialogueManager : MonoBehaviour
 {
+    [SerializeField] private DialogueUIManager _dialogueUI;
+    [SerializeField] private DialogueAudioManager _audioManager;
+
     private List<DialogueInteractable> _interactables;
     private string[] _currentDialogue;
     private int _dialogueCount;
     private int _maxDialogue;
-    private PlayerController _player;
+    private string _speaker;
+    private AudioClip _currentSpeakerAudio;
 
 
     private void Start()
@@ -30,10 +34,6 @@ public class DialogueManager : MonoBehaviour
                     interactable.OnDialogueInteract += HandleDialogue;
                 }
             }
-            else
-            {
-                Debug.Log("No Dialogue Interactables found in this room!");
-            }
         }
     }
 
@@ -46,21 +46,20 @@ public class DialogueManager : MonoBehaviour
         _interactables.Clear();
     }
 
-    private void HandleDialogue(string speaker, string[] text, PlayerController player)
+    private void HandleDialogue(DialogueContext context)
     {
-        if (_player == null)
-        {
-            _player = player;
-        }
-
         GameInput.Instance.TogglePlayerDialogue();
-        _maxDialogue = text.Length;
+        _maxDialogue = context.Text.Length;
         _dialogueCount = 0;
-        _currentDialogue = text;
+        _currentDialogue = context.Text;
+        _speaker = context.Speaker;
+        _currentSpeakerAudio = context.SpeakAudio;
 
-        if (_player != null)
+
+        if (_dialogueUI != null)
         {
-            _player.ShowDialogue(_currentDialogue[_dialogueCount]);
+            _audioManager.PlayDialogueAudio(_currentSpeakerAudio);
+            _dialogueUI.ShowSpeakingUI(_speaker, _currentDialogue[_dialogueCount]);
         }
     }
 
@@ -69,14 +68,16 @@ public class DialogueManager : MonoBehaviour
         if (_dialogueCount == _maxDialogue - 1)
         {
             GameInput.Instance.TogglePlayerDialogue();
-            _player.ShowDialogue(null);
             _currentDialogue = null;
-            return;
+            _speaker = string.Empty;
+            _currentSpeakerAudio = null;
+            _dialogueUI.ShowSpeakingUI(string.Empty, string.Empty);
         }
         else
         {
             _dialogueCount++;
-            _player.ShowDialogue(_currentDialogue[_dialogueCount]);
+            _audioManager.PlayDialogueAudio(_currentSpeakerAudio);
+            _dialogueUI.ShowSpeakingUI(_speaker, _currentDialogue[_dialogueCount]);
         }
     }
 

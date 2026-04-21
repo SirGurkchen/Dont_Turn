@@ -32,16 +32,13 @@ public class PlayerInteractManager : MonoBehaviour
 
     public void StartThinking(string text)
     {
+        if (text == _playerThoughtText.text) return;
+
         if (_thoughtRoutine != null)
         {
             StopCoroutine(_thoughtRoutine);
         }
         _thoughtRoutine = StartCoroutine(Think(text));
-    }
-
-    public void SetDialogueThought(string text)
-    {
-        _playerThoughtText.text = text;
     }
 
     private IEnumerator Think(string text)

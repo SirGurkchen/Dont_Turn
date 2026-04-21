@@ -1,9 +1,9 @@
-using TMPro;
 using UnityEngine;
 
 public abstract class InteractableController : MonoBehaviour, IInteract
 {
     [SerializeField] protected Interactable _interactData;
+
 
     public abstract void Interact(PlayerController player);
 
