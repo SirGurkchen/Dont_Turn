@@ -763,12 +763,12 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1985087094}
   - {fileID: 622444777}
   - {fileID: 1514413937}
   - {fileID: 151139172}
   - {fileID: 2043287993}
   - {fileID: 894426355}
+  - {fileID: 1985087094}
   m_Father: {fileID: 483539890}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -903,6 +903,37 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DialogueUIManager
   _speakingTextArea: {fileID: 2043287994}
   _speakerNameArea: {fileID: 1514413938}
+--- !u!1 &549817355
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 549817356}
+  m_Layer: 7
+  m_Name: PlayerLookAt
+  m_TagString: PlayerLook
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &549817356
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 549817355}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.375, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 828117183}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &622444776
 GameObject:
   m_ObjectHideFlags: 0
@@ -1079,6 +1110,7 @@ Transform:
   m_Children:
   - {fileID: 330585546}
   - {fileID: 155783816}
+  - {fileID: 549817356}
   m_Father: {fileID: 1681273454}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!136 &828117184
@@ -1414,7 +1446,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 894426354}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: -100}
   m_LocalScale: {x: 0.08, y: 0.08, z: 0.08}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -2081,7 +2113,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1985087093}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 100}
   m_LocalScale: {x: 25.528284, y: 12.038018, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:

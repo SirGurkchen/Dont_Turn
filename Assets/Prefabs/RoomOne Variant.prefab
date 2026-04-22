@@ -425,19 +425,19 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2462869599421652866, guid: 982625c8f76bc304ca877892889c3b65, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.8291626
+      value: -2.55
       objectReference: {fileID: 0}
     - target: {fileID: 2462869599421652866, guid: 982625c8f76bc304ca877892889c3b65, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.00000038350032
+      value: 0.00000035762787
       objectReference: {fileID: 0}
     - target: {fileID: 2462869599421652866, guid: 982625c8f76bc304ca877892889c3b65, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.4043246
+      value: 8.46
       objectReference: {fileID: 0}
     - target: {fileID: 2462869599421652866, guid: 982625c8f76bc304ca877892889c3b65, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.5404878
+      value: 0.44741592
       objectReference: {fileID: 0}
     - target: {fileID: 2462869599421652866, guid: 982625c8f76bc304ca877892889c3b65, type: 3}
       propertyPath: m_LocalRotation.x
@@ -445,7 +445,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2462869599421652866, guid: 982625c8f76bc304ca877892889c3b65, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.8413518
+      value: 0.894326
       objectReference: {fileID: 0}
     - target: {fileID: 2462869599421652866, guid: 982625c8f76bc304ca877892889c3b65, type: 3}
       propertyPath: m_LocalRotation.z
@@ -457,7 +457,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2462869599421652866, guid: 982625c8f76bc304ca877892889c3b65, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 114.566
+      value: 126.844
       objectReference: {fileID: 0}
     - target: {fileID: 2462869599421652866, guid: 982625c8f76bc304ca877892889c3b65, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
@@ -467,6 +467,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlaceholdSpeaker
       objectReference: {fileID: 0}
+    - target: {fileID: 3107018958829685768, guid: 982625c8f76bc304ca877892889c3b65, type: 3}
+      propertyPath: _animator
+      value: 
+      objectReference: {fileID: 4647488027576892816}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -477,6 +481,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2462869599421652866, guid: 982625c8f76bc304ca877892889c3b65, type: 3}
   m_PrefabInstance: {fileID: 2068499215086338561}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &4647488027576892816 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6686711504160210833, guid: 982625c8f76bc304ca877892889c3b65, type: 3}
+  m_PrefabInstance: {fileID: 2068499215086338561}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 41486accca97da143924d60bff8f02f8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::NPCAnimator
 --- !u!1001 &2099105842109593156
 PrefabInstance:
   m_ObjectHideFlags: 0

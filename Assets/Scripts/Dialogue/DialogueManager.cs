@@ -12,6 +12,7 @@ public class DialogueManager : MonoBehaviour
     private int _dialogueCount;
     private int _maxDialogue;
     private string _speaker;
+    private NPCAnimator _currentAnimator;
     private AudioClip _currentSpeakerAudio;
 
 
@@ -54,11 +55,13 @@ public class DialogueManager : MonoBehaviour
         _currentDialogue = context.Text;
         _speaker = context.Speaker;
         _currentSpeakerAudio = context.SpeakAudio;
+        _currentAnimator = context.NPCAnimation;
 
 
         if (_dialogueUI != null)
         {
             _audioManager.PlayDialogueAudio(_currentSpeakerAudio);
+            _currentAnimator.PlaySpeakAnimation();
             _dialogueUI.ShowSpeakingUI(_speaker, _currentDialogue[_dialogueCount]);
         }
     }
@@ -71,12 +74,14 @@ public class DialogueManager : MonoBehaviour
             _currentDialogue = null;
             _speaker = string.Empty;
             _currentSpeakerAudio = null;
+            _currentAnimator = null;
             _dialogueUI.ShowSpeakingUI(string.Empty, string.Empty);
         }
         else
         {
             _dialogueCount++;
             _audioManager.PlayDialogueAudio(_currentSpeakerAudio);
+            _currentAnimator.PlaySpeakAnimation();
             _dialogueUI.ShowSpeakingUI(_speaker, _currentDialogue[_dialogueCount]);
         }
     }
