@@ -5,7 +5,7 @@ public class NPCAnimator : MonoBehaviour
 {
     [SerializeField] private GameObject _characterNeck;
     [SerializeField] private Vector3 _neckRotationOffset;
-    [SerializeField] private Animator _animator;
+    [SerializeField] private Animator _faceAnimator;
 
     private GameObject _playerObject;
     private Quaternion _defaultLook;
@@ -34,7 +34,7 @@ public class NPCAnimator : MonoBehaviour
         _blinkTimer += Time.deltaTime;
         if (_blinkTimer >= _nextBlinkInterval)
         {
-            _animator.SetTrigger("DoBlink");
+            _faceAnimator.SetTrigger("DoBlink");
             _blinkTimer = 0f;
             _nextBlinkInterval = GetNextBlinkInterval();
         }
@@ -50,7 +50,7 @@ public class NPCAnimator : MonoBehaviour
 
     public void PlaySpeakAnimation()
     {
-        _animator.SetTrigger("DoTalk");
+        _faceAnimator.SetTrigger("DoTalk");
     }
 
     private float CalculatePlayerDistance()
